@@ -1,0 +1,90 @@
+{
+    "sugaring": [{
+            "id": 1,
+            "type": "Brazilian",
+            "price": "60$"
+        },
+        {
+            "id": 2,
+            "type": "Underarms",
+            "price": "20$"
+        },
+        {
+            "id": 3,
+            "type": "Full legs",
+            "price": "60$"
+        },
+        {
+            "id": 4,
+            "type": "Half legs",
+            "price": "45$"
+        },
+        {
+            "id": 5,
+            "type": "Arms",
+            "price": "45$"
+        },
+        {
+            "id": 6,
+            "type": "Back",
+            "price": "50$"
+        },
+        {
+            "id": 7,
+            "type": "Belly",
+            "price": "20$"
+        },
+        {
+            "id": 8,
+            "type": "Lip",
+            "price": "15$"
+        }
+    ],
+    "makeup": [{
+            "id": 1,
+            "type": "Day make-up",
+            "price": "50$"
+        },
+        {
+            "id": 2,
+            "type": "Evening make-up",
+            "price": "65$"
+        },
+        {
+            "id": 3,
+            "type": "Photoshoot make-up",
+            "price": "80$"
+        },
+        {
+            "id": 4,
+            "type": "Bridal make-up",
+            "price": "100$"
+        }
+    ],
+    "nails": [{
+            "id": 1,
+            "type": "French manicurep",
+            "price": "25$"
+        },
+        {
+            "id": 2,
+            "type": "Color gel manicure",
+            "price": "40$"
+        },
+        {
+            "id": 3,
+            "type": "Powder gel manicure",
+            "price": "50$"
+        },
+        {
+            "id": 4,
+            "type": "Regular pedicure",
+            "price": "40$"
+        },
+        {
+            "id": 5,
+            "type": "Color gel pedicure",
+            "price": "55$"
+        }
+    ]
+}
