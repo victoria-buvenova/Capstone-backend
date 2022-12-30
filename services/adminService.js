@@ -13,12 +13,25 @@ let dbGetAllClients = async (res) => {
   });
 };
 
-let dbAddMyTime = async (req, res) => {
+let dbGetAllUsers = async (res) => {
   console.log("db services here");
+
+  return new Promise((resolve, reject) => {
+    let sqlQuery = `SELECT * FROM allUsers`;
+
+    sql.query(sqlQuery, (err, result, field) => {
+      if (err) return reject(err);
+      resolve(Object.values(result));
+    });
+  });
+};
+
+let dbAddMyTime = async (req, res) => {
+  console.log("db add my time here");
   console.log(req.query);
 
-  let date = req.query.date;
-  let time = req.query.time;
+  let date = req.query.Date;
+  let time = req.query.Time;
 
   return new Promise((resolve, reject) => {
     let sqlQuery = `INSERT INTO Timetable.Timeslots (Date, Time) VALUES ('${date}', '${time}')`;
@@ -36,8 +49,8 @@ let dbUpdateDateById = async (req, res) => {
   // let date = req.query.date;
   //let time = req.query.time;
   let id = req.query.id;
-  let time = req.query.time ? req.query.time : "no input";
-  let date = req.query.date ? req.query.date : "no input";
+  let time = req.query.Time ? req.query.Time : "no input";
+  let date = req.query.Date ? req.query.Date : "no input";
   return new Promise((resolve, reject) => {
     if (time !== "no input" && date !== "no input") {
       let sqlQuery = `UPDATE Timetable.Timeslots SET Date = '${date}', Time = '${time}' WHERE id = '${id}'`;
@@ -91,6 +104,7 @@ let dbDeleteById = async (req, res) => {
 
 module.exports = {
   dbGetAllClients,
+  dbGetAllUsers,
   dbAddMyTime,
   dbUpdateDateById,
   // dbUpdateTimeById,

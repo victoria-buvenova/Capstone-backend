@@ -6,6 +6,12 @@ const getAllClients = async (req, res) => {
   res.send(data);
 };
 
+const getAllUsers = async (req, res) => {
+  let data = await DBServices.dbGetAllUsers(req, res);
+  console.log(data);
+  res.send(data);
+};
+
 const addMyTime = async (req, res) => {
   let data = await DBServices.dbAddMyTime(req, res);
   console.log(data);
@@ -32,6 +38,7 @@ const deleteById = async (req, res) => {
 
 module.exports = {
   getAllClients,
+  getAllUsers,
   addMyTime,
   // updateTime,
   updateDate,

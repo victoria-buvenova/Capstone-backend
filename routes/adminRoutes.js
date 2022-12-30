@@ -7,6 +7,11 @@ router.get("/getall", (req, res) => {
   adminController.getAllClients(req, res);
 });
 
+// from allUsers table
+router.get("/getallusers", (req, res) => {
+  adminController.getAllUsers(req, res);
+});
+
 // this is for the admin to add time
 router.post("/add", (req, res) => {
   adminController.addMyTime(req, res);
