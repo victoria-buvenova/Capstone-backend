@@ -9,6 +9,11 @@ router.put("/book", (req, res) => {
   clientsController.bookTime(req, res);
 });
 
+router.get("/mybookings", (req, res) => {
+  console.log("router here");
+  clientsController.getMyBookings(req, res);
+});
+
 router.get("/sugaring", (req, res) => {
   console.log("router here");
   clientsController.getSugaringServices(req, res);

@@ -26,6 +26,23 @@ let dbGetAllUsers = async (res) => {
   });
 };
 
+let dbAddUser = async (req, res) => {
+  console.log("db add user here");
+  console.log(req.query);
+
+  let email = req.query.email;
+  let password = req.query.password;
+
+  return new Promise((resolve, reject) => {
+    let sqlQuery = `INSERT INTO Timetable.allUsers (email, password) VALUES ('${email}', '${password}')`;
+
+    sql.query(sqlQuery, (err, result, field) => {
+      if (err) return reject(err);
+      resolve(Object.values(result));
+    });
+  });
+};
+
 let dbAddMyTime = async (req, res) => {
   console.log("db add my time here");
   console.log(req.query);
@@ -105,6 +122,7 @@ let dbDeleteById = async (req, res) => {
 module.exports = {
   dbGetAllClients,
   dbGetAllUsers,
+  dbAddUser,
   dbAddMyTime,
   dbUpdateDateById,
   // dbUpdateTimeById,

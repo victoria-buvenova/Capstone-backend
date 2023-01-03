@@ -17,6 +17,11 @@ router.post("/add", (req, res) => {
   adminController.addMyTime(req, res);
 });
 
+router.post("/register", (req, res) => {
+  console.log("register", req, res);
+  adminController.addUser(req, res);
+});
+
 router.put("/updatedateandtime", (req, res) => {
   adminController.updateDate(req, res);
 });

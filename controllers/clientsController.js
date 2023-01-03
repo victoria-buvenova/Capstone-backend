@@ -7,6 +7,13 @@ const bookTime = async (req, res) => {
   res.send("Successfully booked");
 };
 
+const getMyBookings = async (req, res) => {
+  console.log("book time controller here");
+  let data = await DBServices.dbGetMyBookings(req, res);
+  console.log(data);
+  res.send("Successfully booked");
+};
+
 const getSugaringServices = async (req, res) => {
   console.log("controller here");
   let data = await DBServices.dbGetSugaringServices(req, res);
@@ -33,4 +40,5 @@ module.exports = {
   getSugaringServices,
   getMakeupServices,
   getNailsServices,
+  getMyBookings,
 };

@@ -16,6 +16,19 @@ let dbBookTime = async (req, res) => {
   });
 };
 
+let dbGetMyBookings = async (res) => {
+  console.log("db services here");
+
+  return new Promise((resolve, reject) => {
+    let sqlQuery = `SELECT * FROM MyBookings`;
+
+    sql.query(sqlQuery, (err, result, field) => {
+      if (err) return reject(err);
+      resolve(Object.values(result));
+    });
+  });
+};
+
 let dbGetSugaringServices = async (res) => {
   console.log("db services here");
 
@@ -60,4 +73,5 @@ module.exports = {
   dbGetSugaringServices,
   dbGetMakeupServices,
   dbGetNailsServices,
+  dbGetMyBookings,
 };
