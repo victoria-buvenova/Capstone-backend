@@ -91,19 +91,44 @@ let dbUpdateDateById = async (req, res) => {
   });
 };
 
-// let dbUpdateTimeById = async (req, res)=>{
-//   console.log("db services here");
-//   console.log(req.query);
-//   let time = req.query.time;
-//   let id = req.query.id
-//   return new Promise((resolve, reject) => {
-//    let sqlQuery  = `UPDATE Timetable.Timeslots SET Time = "${time}" WHERE id = "${id}"`;
-//       sql.query(sqlQuery, (err, result, field) => {
-//           if(err) return reject(err);
-//           resolve(Object.values(((result))));
-//       });
-//   });
-// }
+let dbUpdateSugaringPrice = async (req, res) => {
+  let price = req.query.price;
+  let id = req.query.id;
+
+  return new Promise((resolve, reject) => {
+    let sqlQuery = `UPDATE Timetable.Sugaring SET price = "${price}" WHERE id = "${id}"`;
+    sql.query(sqlQuery, (err, result, field) => {
+      if (err) return reject(err);
+      resolve(Object.values(result));
+    });
+  });
+};
+
+let dbUpdateMakeupPrice = async (req, res) => {
+  let price = req.query.price;
+  let id = req.query.id;
+
+  return new Promise((resolve, reject) => {
+    let sqlQuery = `UPDATE Timetable.Makeup SET price = "${price}" WHERE id = "${id}"`;
+    sql.query(sqlQuery, (err, result, field) => {
+      if (err) return reject(err);
+      resolve(Object.values(result));
+    });
+  });
+};
+
+let dbUpdateNailsPrice = async (req, res) => {
+  let price = req.query.price;
+  let id = req.query.id;
+
+  return new Promise((resolve, reject) => {
+    let sqlQuery = `UPDATE Timetable.Nails SET price = "${price}" WHERE id = "${id}"`;
+    sql.query(sqlQuery, (err, result, field) => {
+      if (err) return reject(err);
+      resolve(Object.values(result));
+    });
+  });
+};
 
 let dbDeleteById = async (req, res) => {
   console.log("db services here");
@@ -125,6 +150,8 @@ module.exports = {
   dbAddUser,
   dbAddMyTime,
   dbUpdateDateById,
-  // dbUpdateTimeById,
+  dbUpdateSugaringPrice,
+  dbUpdateMakeupPrice,
+  dbUpdateNailsPrice,
   dbDeleteById,
 };

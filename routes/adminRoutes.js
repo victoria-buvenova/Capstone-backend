@@ -26,9 +26,17 @@ router.put("/updatedateandtime", (req, res) => {
   adminController.updateDate(req, res);
 });
 
-// router.put('/updatetime',(req,res)=>{
-//     adminController.updateTime(req,res)
-// })
+router.put("/updatesugaringprice", (req, res) => {
+  adminController.updateSugaringPrice(req, res);
+});
+
+router.put("/updatemakeupprice", (req, res) => {
+  adminController.updateMakeupPrice(req, res);
+});
+
+router.put("/updatenailsprice", (req, res) => {
+  adminController.updateNailsPrice(req, res);
+});
 
 router.delete("/deletebyid", (req, res) => {
   adminController.deleteById(req, res);

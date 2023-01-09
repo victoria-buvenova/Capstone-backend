@@ -15,7 +15,7 @@ const getAllUsers = async (req, res) => {
 const addUser = async (req, res) => {
   let data = await DBServices.dbAddUser(req, res);
   console.log("add user", data);
-  res.send(data);
+  res.send("Successfully registered");
 };
 
 const addMyTime = async (req, res) => {
@@ -30,11 +30,23 @@ const updateDate = async (req, res) => {
   res.send("Successfully updated date");
 };
 
-// const updateTime = async (req,res)=>{
-//     let data = await DBServices.dbUpdateTimeById(req,res)
-//     console.log(data)
-//     res.send('Successfully updated time')
-// }
+const updateSugaringPrice = async (req, res) => {
+  let data = await DBServices.dbUpdateSugaringPrice(req, res);
+  console.log(data);
+  res.send("Successfully updated price");
+};
+
+const updateMakeupPrice = async (req, res) => {
+  let data = await DBServices.dbUpdateMakeupPrice(req, res);
+  console.log(data);
+  res.send("Successfully updated price");
+};
+
+const updateNailsPrice = async (req, res) => {
+  let data = await DBServices.dbUpdateNailsPrice(req, res);
+  console.log(data);
+  res.send("Successfully updated price");
+};
 
 const deleteById = async (req, res) => {
   let data = await DBServices.dbDeleteById(req, res);
@@ -47,7 +59,9 @@ module.exports = {
   getAllUsers,
   addUser,
   addMyTime,
-  // updateTime,
+  updateSugaringPrice,
+  updateMakeupPrice,
+  updateNailsPrice,
   updateDate,
   deleteById,
 };
