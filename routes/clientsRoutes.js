@@ -13,7 +13,6 @@ router.get("/mybookings", (req, res) => {
 });
 
 router.get("/sugaring", (req, res) => {
-  console.log("router here");
   clientsController.getSugaringServices(req, res);
 });
 

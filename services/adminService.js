@@ -63,8 +63,6 @@ let dbAddMyTime = async (req, res) => {
 let dbUpdateDateById = async (req, res) => {
   console.log("db services here");
   console.log(req.query);
-  // let date = req.query.date;
-  //let time = req.query.time;
   let id = req.query.id;
   let time = req.query.Time ? req.query.Time : "no input";
   let date = req.query.Date ? req.query.Date : "no input";

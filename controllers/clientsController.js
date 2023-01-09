@@ -8,10 +8,10 @@ const bookTime = async (req, res) => {
 };
 
 const getMyBookings = async (req, res) => {
-  console.log("book time controller here");
+  console.log("get my bookings", req.query);
   let data = await DBServices.dbGetMyBookings(req, res);
-  console.log(data);
-  res.send("Successfully booked");
+  console.log("124", data);
+  res.send(data);
 };
 
 const getSugaringServices = async (req, res) => {

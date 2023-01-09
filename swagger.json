@@ -1,0 +1,86 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "My User Project CRUD",
+        "description": "My User Project Application API",
+        "license": {
+            "name": "MIT",
+            "url": "https://hp-api.herokuapp.com/"
+        }
+    },
+    "host": "localhost:8080",
+    "basePath": "/",
+    "tags": [{
+        "name": "Timetable",
+        "description": "A table used by admin to see all clients"
+    }],
+    "schemes": ["http"],
+    "consumes": ["application/json"],
+    "produces": ["application/json"],
+    "paths": {
+        "/admin/getall": {
+            "get": {
+                "tags": [
+                    "Uploads all clients"
+                ],
+                "summary": "Fetches for an ID",
+                "parameters": [{
+                    "name": "id"
+
+                }],
+                "responses": {
+                    "200": {
+                        "description": "This service allows you to upload all clients to admin use"
+                    }
+                }
+            }
+        }
+    },
+    "/admin/updatedateandtime": {
+        "put": {
+            "tags": [
+                "Updates date and/or date and time"
+            ],
+            "summary": "This service allows you to update date and/or time from the timetable",
+            "parameters": [{
+                    "name": "date/time",
+                    "in": "query",
+                    "description": "Enter client`s ID"
+
+                },
+                {
+                    "name": "id",
+                    "in": "query",
+                    "description": "Enter client`s ID"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "Enter date and/or time and update it"
+                }
+            }
+        }
+    },
+    "/admin/updatesugaringprice": {
+        "put": {
+            "tags": [
+                "Updates price pf services"
+            ],
+            "summary": "This service allows you to update price of services",
+            "parameters": [{
+                "name": "price",
+                "in": "query",
+                "description": "Enter new price"
+
+            }],
+            "responses": {
+                "200": {
+                    "description": "Enter a new price and update it"
+                }
+            }
+        }
+    }
+
+
+}

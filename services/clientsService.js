@@ -16,12 +16,10 @@ let dbBookTime = async (req, res) => {
   });
 };
 
-let dbGetMyBookings = async (res) => {
-  console.log("db services here");
-
+let dbGetMyBookings = async (req, res) => {
+  let contacts = req.query.Contacts;
   return new Promise((resolve, reject) => {
-    let sqlQuery = `SELECT * FROM MyBookings`;
-
+    let sqlQuery = `SELECT * FROM Timetable.Timeslots WHERE Contacts = "${contacts}"`;
     sql.query(sqlQuery, (err, result, field) => {
       if (err) return reject(err);
       resolve(Object.values(result));
